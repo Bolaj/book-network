@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "user")
+@Table(name = "user") 
 @EntityListeners(AuditingEntityListener.class)
 public class User implements UserDetails, Principal {
 
