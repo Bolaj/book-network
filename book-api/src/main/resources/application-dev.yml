@@ -1,18 +1,15 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/book_social_network
-    username: postgres
-    password: myDb@33
-    driver-class-name: org.postgresql.Driver
+    url: jdbc:mysql://localhost:3306/book_api
+    username: root
+    password: Timilehin@255
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: false
-    properties:
-      hibernate:
-        format-sql: true
-    database: postgresql
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQLDialect
   mail:
     host: localhost
     port: 1025
@@ -39,6 +36,6 @@ application:
       activation-url: http://localhost:4200/activate-account
 
 server:
-  port: 8082
+  port: 8084
   servlet:
     context-path: /api/v1/
