@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "user") 
+@Table(name = "user_table")
 @EntityListeners(AuditingEntityListener.class)
 public class User implements UserDetails, Principal {
 
@@ -93,7 +93,7 @@ public class User implements UserDetails, Principal {
     public boolean isEnabled() {
         return enabled;
     }
-    private String fullName(){
+    public String fullName(){
         return firstName + " " + lastName;
     }
 }
