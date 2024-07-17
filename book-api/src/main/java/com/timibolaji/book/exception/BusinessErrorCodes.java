@@ -3,7 +3,6 @@ package com.timibolaji.book.exception;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
-@Getter
 
 public enum BusinessErrorCodes {
     NO_CODE(0, HttpStatus.NOT_IMPLEMENTED, "No Code"),
@@ -15,7 +14,7 @@ public enum BusinessErrorCodes {
 
     ;
     @Getter
-    private final int code; 
+    private final int code;
 
     @Getter
     private final String description;
