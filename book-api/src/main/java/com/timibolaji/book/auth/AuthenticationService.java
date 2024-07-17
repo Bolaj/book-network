@@ -16,6 +16,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.security.SecureRandom;
 import java.time.LocalDateTime;
@@ -101,6 +102,7 @@ public class AuthenticationService {
                 .token(jwtToken)
                 .build();
     }
+    @Transactional
     public void activateAccount(String token) throws MessagingException {
         Token getToken = tokenRepository.findByToken(token)
                 .orElseThrow(() -> new RuntimeException("Invalid Token"));
