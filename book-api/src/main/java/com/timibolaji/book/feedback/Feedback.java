@@ -1,5 +1,4 @@
-package com.timibolaji.book.book;
-
+package com.timibolaji.book.feedback;
 
 import com.timibolaji.book.common.BaseEntity;
 import jakarta.persistence.*;
@@ -18,17 +17,11 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @NoArgsConstructor
 @SuperBuilder
 @EntityListeners(AuditingEntityListener.class)
-public class Book extends BaseEntity {
+
+public class Feedback extends BaseEntity  {
 
 
-    private String title;
-    private String authorName;
-    private String isbn;
-    private String synopsis;
-    private String bookCover;
-    private boolean archived;
-    private boolean shareable;
-
-
+    private Double note;
+    private String comment;
 
 }
