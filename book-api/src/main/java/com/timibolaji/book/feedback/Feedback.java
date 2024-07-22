@@ -27,6 +27,6 @@ public class Feedback extends BaseEntity  {
 
     @ManyToOne
     @JoinColumn(name = "book_id")
-    private Book books;
+    private Book book;
 
 }
