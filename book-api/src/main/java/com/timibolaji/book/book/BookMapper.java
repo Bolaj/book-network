@@ -1,5 +1,6 @@
 package com.timibolaji.book.book;
 
+import com.timibolaji.book.file.FileUtils;
 import com.timibolaji.book.history.BookTransactionHistory;
 import org.springframework.stereotype.Service;
 
@@ -29,8 +30,7 @@ public class BookMapper {
                 .archived(book.isArchived())
                 .shareable(book.isShareable())
                 .owner(book.getOwner().fullName())
-                //todo
-                //.cover()
+                .cover(FileUtils.readFileFromLocation(book.getBookCover()))
 
                 .build();
     }
