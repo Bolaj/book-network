@@ -92,7 +92,7 @@ public class BookController {
         return ResponseEntity.ok(bookService.approveReturnedBorrowedBook(bookId, connectedUser));
     }
     @PutMapping("/cover/{book-id}")
-    public ResponseEntity<Integer> uploadBookCover(@PathVariable("book-id") Integer bookId, @Parameter(), @RequestPart("file") MultipartFile file, Authentication connectedUser){
+    public ResponseEntity<Integer> uploadBookCover(@PathVariable("book-id") Integer bookId, @Parameter() @RequestPart("file") MultipartFile file, Authentication connectedUser){
         bookService.uploadBookCover(file,bookId,connectedUser);
         return ResponseEntity.accepted().build();
     }
