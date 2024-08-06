@@ -1,14 +1,14 @@
 package com.timibolaji.book.history;
 
-import com.timibolaji.book.book.Book;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
-import java.util.List;
 import java.util.Optional;
 
+@Repository
 public interface BookTransactionHistoryRepository extends JpaRepository<BookTransactionHistory, Integer> {
     @Query(
             """
@@ -28,7 +28,7 @@ public interface BookTransactionHistoryRepository extends JpaRepository<BookTran
             """
 
     )
-    Page<BookTransactionHistory> findAllReturnedBooks(Pageable pageable, Integer id);
+    Page<BookTransactionHistory> findAllReturnedBooks(Pageable pageable, Integer userId);
 
     @Query(
             """
@@ -67,5 +67,5 @@ public interface BookTransactionHistoryRepository extends JpaRepository<BookTran
             
             """
     )
-    Optional<BookTransactionHistory> findByBookIdAndOwnerId(Integer bookId, Integer id);
+    Optional<BookTransactionHistory> findByBookIdAndOwnerId(Integer bookId, Integer userId);
 }
